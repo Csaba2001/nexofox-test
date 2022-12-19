@@ -1,6 +1,4 @@
-import express, { json } from 'express';
-import { setOriginalNode } from 'typescript';
-//import { isEnumMember, isNumericLiteral } from 'typescript';
+import express from 'express';
 
 const app=express();
 
@@ -34,8 +32,7 @@ app.get('/', (req, res)=>{
             a++;
         }
         while(a<=b);
-        const jsonContent=JSON.stringify(tomb);
-        res.send(jsonContent);
+        res.send({tomb});
     }
 });
 

@@ -4,7 +4,6 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const express_1 = __importDefault(require("express"));
-//import { isEnumMember, isNumericLiteral } from 'typescript';
 const app = (0, express_1.default)();
 app.get('/', (req, res) => {
     if (req.query.x && req.query.y) {
@@ -35,8 +34,7 @@ app.get('/', (req, res) => {
             }
             a++;
         } while (a <= b);
-        const jsonContent = JSON.stringify(tomb);
-        res.send(jsonContent);
+        res.send({ tomb });
     }
 });
 app.listen(9876, () => {
