@@ -45,6 +45,6 @@ jobs:
       - name: Push image
         uses: docker/build-push-action@v2
         with:
-          push: true
+          load: true
           tags: latest
           file: ./Dockerfile
