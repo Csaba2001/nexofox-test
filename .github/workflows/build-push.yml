@@ -38,13 +38,13 @@ jobs:
       - name: Build image
         uses: docker/build-push-action@v2
         with:
-          tags: ghcr.io/Csaba2001/nexofox-test:latest
+          tags: latest
           platforms: linux/amd64,linux/arm64,linux/arm/v8,linux/arm/v7
           file: ./Dockerfile
           
       - name: Push image
         uses: docker/build-push-action@v2
         with:
-          push: true
-          tags: ghcr.io/Csaba2001/nexofox-test:latest
+          load: true
+          tags: latest
           file: ./Dockerfile
