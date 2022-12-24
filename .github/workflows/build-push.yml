@@ -30,7 +30,7 @@ jobs:
           
       - name: Build image
         working-directory: .
-        run: docker build . --file Dockerfile --tag ghcr.io/csaba2001/nexofox-test:latest
+        run: docker build . --file Dockerfile --platform linux/amd64,linux/arm64,linux/arm/v7,linux/arm/v8 --tag ghcr.io/csaba2001/nexofox-test:latest
 
       - name: Push image
         run: docker push ghcr.io/csaba2001/nexofox-test:latest
