@@ -30,8 +30,8 @@ jobs:
           
       - name: Build image
         uses: docker/setup-buildx-action@v2
-        platforms: linux/amd64,linux/arm64,linux/arm/v7,linux/arm/v8
-        tag: csaba2001/nexofox-test:latest
+        working-directory: .
+        run: docker buildx build . --file Dockerfile --platform linux/amd64,linux/arm64,linux/arm/v7,linux/arm/v8 --tag ghcr.io/csaba2001/nexofox-test:latest
 
       - name: Push image
         run: docker push ghcr.io/csaba2001/nexofox-test:latest
