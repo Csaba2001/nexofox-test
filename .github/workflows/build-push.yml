@@ -3,6 +3,7 @@ name: Publish Docker Image
 on:
   push:
     branches: [ main ]
+  workflow_dispatch:
   release:
     types:
       - published
@@ -21,7 +22,7 @@ jobs:
         id: docker_meta
         uses: crazy-max/ghaction-docker-meta@v1
         with:
-          images: ghcr.io/Csaba2001/valami
+          images: ghcr.io/gabor-smith/nexofox-test-csaba
           tag-sha: true
           tag-edge: false
           tag-latest: true
