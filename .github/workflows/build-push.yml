@@ -2,8 +2,11 @@ name: Publish Docker Image
 
 on:
   push:
-    branches: [ master ]
+    branches: [ main ]
   workflow_dispatch:
+  release:
+    types:
+      - published
         
 jobs:
 
@@ -19,7 +22,7 @@ jobs:
         id: docker_meta
         uses: crazy-max/ghaction-docker-meta@v1
         with:
-          images: ghcr.io/Csaba2001/nexofox-test
+          images: ghcr.io/gabor-smith/nexofox-test-csaba
           tag-latest: true
           
       - name: Set up QEMU
@@ -46,5 +49,5 @@ jobs:
         uses: docker/build-push-action@v2
         with:
           push: true
-          tags: csaba2001/nexofox-test:latest
+          tags: latest
           file: ./Dockerfile
