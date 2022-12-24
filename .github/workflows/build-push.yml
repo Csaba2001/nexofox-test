@@ -20,8 +20,6 @@ jobs:
         uses: crazy-max/ghaction-docker-meta@v1
         with:
           images: ghcr.io/Csaba2001/nexofox-test
-          tag-sha: true
-          tag-edge: false
           tag-latest: true
           
       - name: Set up QEMU
