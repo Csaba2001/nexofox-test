@@ -32,7 +32,7 @@ jobs:
         uses: docker/setup-buildx-action@v1
           
       - name: Build image
-        working-directort: .
+        working-directory: .
         run: docker build buildx . --file Dockerfile --tag ghcr.io/Csaba2001/nexofox-test:latest
 
       - name: Push image
